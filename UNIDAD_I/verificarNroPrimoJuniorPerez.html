@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .primoColor{
+            background-color: white;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <h1>Verificación primo</h1>
+
+    <p>Ingresa tu numerito</p>
+
+    <div class="form">
+      <label for="guessField">Ingresa el número: </label>
+      <input type="number" min="1" max="10000" required id="txtNumero" class="txtNumero">
+      <input type="submit" value="Verificar" class="btnVerificar">
+    </div>
+
+    <div class="resultados">
+      <p class="primoColor">Rojo o verde</p>
+    </div>
+
+    <div>
+        <h2>Desarrollado por Junior Perez</h2>
+    </div>
+
+    <script>
+        const primoColor = document.querySelector(".primoColor");
+
+        const txtNumero = document.querySelector(".txtNumero");
+        const btnVerificar = document.querySelector(".btnVerificar");
+
+        function corroborarPrimo(){
+            let ingreso = Number(txtNumero.value);
+            var cant = 0;
+            var aux = 0;
+            var probador = 1;
+
+            while(aux < ingreso && cant <= 4){
+                aux = ingreso % probador;
+                probador++;
+
+                if(aux === 0){
+                    cant++;
+                }
+            }
+
+            if(cant === 2){
+                primoColor.textContent = "En efecto, es primo";
+                primoColor.style.backgroundColor="green";
+            } else {
+                primoColor.textContent = "No es primo";
+                primoColor.style.backgroundColor="red";
+            }
+
+        }
+
+        
+        function setGameOver(){
+            txtNumero.disabled = true;
+            btnVerificar.disabled = true;
+
+            btnReseteo = document.createElement("button");
+            btnReseteo.textContent = "Nuevo"
+            document.body.append(btnReseteo);
+            //resetButton.addEventListener("click", resetear); 
+        }
+
+        btnVerificar.addEventListener("click", corroborarPrimo)
+
+        function resetear(){
+
+        }
+
+    </script>
+
+</body>
+</html>
