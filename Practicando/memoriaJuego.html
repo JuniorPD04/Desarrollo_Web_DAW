@@ -1,28 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/juego.css">
+    <title>Juego de memoria</title>
 </head>
+
 <body>
-    <div class="instrucciones">
-        <h1>Juego de memoria</h1>
-        <p>Ingresar nro de columnas y nro de filas</p>
-        <div class="div_filas">
-            <p>Ingresa nro. de filas</p>
-            <input type="text" placeholder="ej. 2">
+    <div class="container-fluid">
+        <div class="instrucciones">
+            <h1>Juego de memoria</h1>
+            <p>Ingresar nro de columnas y nro de filas</p>
+            <div class="div_filas">
+                <p>Ingresa nro. de filas</p>
+                <input type="number" min="1" max="5" placeholder="ej. 2">
+            </div>
+            <div class="div_columnas">
+                <p>Ingresa nro. de columnas</p>
+                <input type="number" min="1" max="5" placeholder="ej. 2">
+            </div>
+            <button>Aceptar</button>
         </div>
-        <div class="div_columnas">
-            <p>Ingresa nro. de columnas</p>
-            <input type="text" placeholder="ej. 2">
-        </div>
+        <main class="contenedor_juego" id="creacion_dinamica">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Mark</th>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Jacob</th>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <td>Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>miau</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
     </div>
-    <main class="contenedor_juego">
-        <tr>
-            <td>12</td>
-            <td>12</td>
-        </tr>
-    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
