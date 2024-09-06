@@ -16,21 +16,22 @@
             <p>Ingresar nro de columnas y nro de filas</p>
             <div class="div_filas">
                 <p>Ingresa nro. de filas</p>
-                <input type="number" min="1" max="5" placeholder="ej. 2">
+                <input type="number" min="1" max="5" placeholder="ej. 2" onkeydown="return false;">
+y
             </div>
             <div class="div_columnas">
                 <p>Ingresa nro. de columnas</p>
-                <input type="number" min="1" max="5" placeholder="ej. 2">
+                <input type="number" min="1" max="5" placeholder="ej. 2" onkeydown="return false;">
             </div>
             <button class="btn">Aceptar</button>
         </div>
         <main class="contenedor_juego" id="creacion_dinamica">
             <table class="table">
-                <thead id="header_tabla">
+                <thead id="header_tabla"></thead>
                     
                 </thead>
                 <tbody id="body_tabla">
-                    <tr class="fila_header">
+                    <tr id="fila_header_tr">
                         
                     </tr>
                     <tr>

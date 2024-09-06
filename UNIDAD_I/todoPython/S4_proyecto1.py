@@ -104,25 +104,26 @@ import random
 
 def generarBingo(confirmacion):
     letra = random.randint(1,5)
+    factor = letra - 1 
+    ini = (factor)*15 + 1
+    ff = ini + 14
+
+    numero = random.randint(ini, ff)
+
     if confirmacion.upper() == 'S':
         if letra == 1:
-            numero = numero * (letra-1) + 1
             numero = f'B-{numero}'
             return numero
-        if letra.upper()== 'I':
-            numero = random.randint(16, 30)
+        if letra == 2:
             numero = f'I-{numero}'
             return numero
-        if letra.upper() == 'N':
-            numero = random.randint(31, 45)
+        if letra == 3:
             numero = f'N-{numero}'
             return numero
-        if letra.upper() == 'G':
-            numero = random.randint(46, 60)
+        if letra == 4:
             numero = f'G-{numero}'
             return numero
-        if letra.upper() == 'O':
-            numero = random.randint(61, 75)
+        if letra == 5:
             numero = f'O-{numero}'
             return numero
     else:
