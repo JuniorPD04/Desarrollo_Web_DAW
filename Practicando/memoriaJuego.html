@@ -16,18 +16,18 @@
             <p>Ingresar nro de columnas y nro de filas</p>
             <div class="div_filas">
                 <p>Ingresa nro. de filas</p>
-                <input type="number" min="1" max="5" placeholder="ej. 2" onkeydown="return false;">
+                <input type="number" min="1" max="5" id="nroFilas" placeholder="ej. 2" onkeydown="return false;">
 y
             </div>
             <div class="div_columnas">
                 <p>Ingresa nro. de columnas</p>
-                <input type="number" min="1" max="5" placeholder="ej. 2" onkeydown="return false;">
+                <input type="number" min="1" max="5" id="nroColumnas" placeholder="ej. 2" onkeydown="return false;">
             </div>
-            <button class="btn">Aceptar</button>
+            <button class="btn" onclick="obtenerValores()">Aceptar</button>
         </div>
         <main class="contenedor_juego" id="creacion_dinamica">
             <table class="table" id="tabla_contenedora">
-                <thead id="header_tabla"></thead>
+                <!-- <thead id="header_tabla"></thead>
                     
                 </thead>
                 <tbody id="body_tabla">
@@ -49,8 +49,13 @@ y
                         <td>@twitter</td>
                         <td>miau</td>
                     </tr>
-                </tbody>
+                </tbody> -->
             </table>
+            <div class="adivinar">
+                <input type="text" placeholder="columna" id="primera">
+                <input type="text"placeholder="fila" id="segunda">
+                <button class="btn" id="verificar" onclick="valoresId()">Verificar</button>
+            </div>
         </main>
     </div>
 
