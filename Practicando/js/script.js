@@ -5,7 +5,7 @@ function obtenerValores() {
     agregarLineasHTML(filas, columnas);
 }
 
-function esconder(){
+function esconder() {
     let filas = document.querySelectorAll("table tr");
 
     // Recorrer todas las filas
@@ -121,11 +121,18 @@ function verificarValor(id_1, id_2) {
                 celda_1.style.backgroundColor = "green";
                 celda_2.style.backgroundColor = "green";
             } else {
+                if (contador<10) {
+                    alert(`Error. Los valores fueron: ${celda_1.textContent} y ${celda_2.textContent} te quedan: ${(10 - contador)} intentos`);
+                }
                 contador++;
-                alert("Error, te quedan: " + (10 - contador) + " intentos");
                 if (contador >= 10) {
-                    alert("No tienes más intentos");
-                    contador = 0;
+                    let respuesta = confirm("No tienes más intentos, ¿Quieres continuar?");
+                    if (respuesta) {
+                        contador = 0;
+                        obtenerValores();
+                    } else {
+                        alert("Has cancelado.");
+                    }
                 }
             }
         }
